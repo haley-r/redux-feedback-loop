@@ -34,14 +34,14 @@ class Review extends Component {
     //last path of history prop array is where you are
     //(descriptive and prescriptive)
     submitFeedback = () => {
-        console.log('submitting feedback...');
+        this.props.history.push('/confirmation');
         //axios post to update db
         axios({
             method: 'POST',
             url: '/feedback',
             data: this.state
         }).then((response)=>{
-            console.log('got a response:', response);
+            console.log(response);
         }).catch((error)=>{
             console.log(error);
             alert('problem posting feedback');
