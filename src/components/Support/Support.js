@@ -16,6 +16,8 @@ class Support extends Component {
         })
     }
 
+    //go back to the previous question without saving input, even if it changed
+    //this could be changed to also dispatch
     lastQuestion = () => {
         this.props.history.push('/understanding');
     }
