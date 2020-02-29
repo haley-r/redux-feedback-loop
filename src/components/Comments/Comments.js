@@ -6,7 +6,8 @@ class Comments extends Component {
     //it changes whenever something new is entered
     //it is sent to reducer when next button is clicked
     state = {
-        inputValue: ''
+        inputValue: this.props.reduxState.commentsReducer,
+
     }
 
     //keep the local state up to date with what's entered in the input
@@ -14,6 +15,10 @@ class Comments extends Component {
         this.setState({
             inputValue: event.target.value
         })
+    }
+
+    lastQuestion = () => {
+        this.props.history.push('/support');
     }
 
     //when next button is clicked, do two things:
@@ -35,12 +40,14 @@ class Comments extends Component {
                 <h2>Any comments you want to leave?</h2>
                 <form>
                     <label htmlFor="comments-input">Type your comment here:</label>
-                    <input type="text" id="comments-input" onChange={this.storeInput} />
+                    <input type="text" value={this.state.inputValue} id="comments-input" onChange={this.storeInput} />
                 </form>
+                <button onClick={this.lastQuestion}>Back</button>
                 <button onClick={this.nextQuestion}>Next</button>
             </div>
         )
     }
 }
 
-export default connect()(Comments);
+const putReduxStateOnProps = (reduxState) => ({reduxState});
+export default connect(putReduxStateOnProps)(Comments);

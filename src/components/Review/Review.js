@@ -29,6 +29,10 @@ class Review extends Component {
         })
     }
 
+    lastQuestion = () => {
+        this.props.history.push('/comments');
+    }
+
     //when submit button is clicked, do two things:
     //switch to next component, and dispatch input value to reducer 
     //history is a prop of the component given by Route
@@ -58,6 +62,7 @@ class Review extends Component {
                 <p>Understanding: {this.state.understanding}</p>
                 <p>Support: {this.state.support}</p>
                 <p>Comments: {this.state.comments}</p>
+                <button onClick={this.lastQuestion}>Back</button>
                 <button onClick={this.submitFeedback}>Submit</button>
             </div>
         )
