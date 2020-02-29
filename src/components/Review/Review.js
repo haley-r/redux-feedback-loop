@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 class Review extends Component {
     //local state holds the feedback object based on previous inputs
@@ -33,15 +34,19 @@ class Review extends Component {
     //last path of history prop array is where you are
     //(descriptive and prescriptive)
     submitFeedback = () => {
-        //only do this if user has made selection
-        if (this.state.inputValue !== '') {
-            this.props.history.push('/confirmation');
-            this.props.dispatch({
-                type: 'CONFIRM_FEEDBACK',
-                payload: this.state
-            })
-        }//end if
-        else { alert('make a selection before proceeding'); }//end else
+        console.log('submitting feedback...');
+        //axios post to update db
+        axios({
+            method: 'POST',
+            url: '/feedback',
+            data: this.state
+        }).then((response)=>{
+            console.log('got a response:', response);
+        }).catch((error)=>{
+            console.log(error);
+            alert('problem posting feedback');
+        })
+        
     }
 
     render() {

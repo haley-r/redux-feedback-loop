@@ -7,21 +7,21 @@ import {Provider} from 'react-redux';
 import logger from 'redux-logger';
 import registerServiceWorker from './registerServiceWorker';
 
-const feelingsReducer = (state='', action)=>{
+const feelingsReducer = (state=null, action)=>{
     if (action.type === 'SET_FEELING'){
         return action.payload;
     }
     return state;
 }
 
-const understandingReducer = (state = '', action) => {
+const understandingReducer = (state = null, action) => {
     if (action.type === 'SET_UNDERSTANDING') {
         return action.payload;
     }
     return state;
 }
 
-const supportReducer = (state = '', action) => {
+const supportReducer = (state = null, action) => {
     if (action.type === 'SET_SUPPORT') {
         return action.payload;
     }
