@@ -22,15 +22,11 @@ class Comments extends Component {
     //last path of history prop array is where you are
     //(descriptive and prescriptive)
     nextQuestion = () => {
-        //only do this if user has made selection
-        if (this.state.inputValue !== '') {
-            this.props.history.push('/review');
-            this.props.dispatch({
-                type: 'SET_COMMENTS',
-                payload: this.state.inputValue
-            })
-        }//end if
-        else { alert('make a selection before proceeding'); }//end else
+        this.props.history.push('/review');
+        this.props.dispatch({
+            type: 'SET_COMMENTS',
+            payload: this.state.inputValue
+        })
     }
 
     render() {
