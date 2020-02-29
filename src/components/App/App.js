@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import './App.css';
 
 //components
@@ -17,11 +18,13 @@ class App extends Component {
           <h1 className="App-title">Feedback!</h1>
           <h4><i>Don't forget it!</i></h4>
         </header>
-        <Feeling/>
-        <Understanding/>
-        <Support/>
-        <Comments/>
-        <Review/>
+        <Router>
+          <Route exact path="/" component={Feeling}/>
+          <Route path="/understanding" component={Understanding}/>
+          <Route path="/support" component={Support} />
+          <Route path="/comments" component={Comments} />
+          <Route path="/review" component={Review} />
+        </Router>
       </div>
     );
   }
