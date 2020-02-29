@@ -5,7 +5,23 @@ class Confirmation extends Component {
     resetToStart =()=> {
         //go back to show feedback component
         this.props.history.push('/');
-        //i'm not sure resetting all data is necessary? seems to work...
+        //reset dispatches
+        this.props.dispatch({
+            type: 'SET_FEELING',
+            payload: null
+        })
+        this.props.dispatch({
+            type: 'SET_UNDERSTANDING',
+            payload: null
+        })
+        this.props.dispatch({
+            type: 'SET_SUPPORT',
+            payload: null
+        })
+        this.props.dispatch({
+            type: 'SET_COMMENTS',
+            payload: ''
+        })
     }
 
     render() {

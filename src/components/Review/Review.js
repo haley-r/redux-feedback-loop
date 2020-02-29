@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {withRouter} from 'react-router-dom';
 import axios from 'axios';
 
 class Review extends Component {
@@ -64,4 +65,4 @@ class Review extends Component {
 }
 
 const putReduxStateOnProps=(reduxState)=>({reduxState})
-export default connect(putReduxStateOnProps)(Review);
+export default connect(putReduxStateOnProps)(withRouter(Review));

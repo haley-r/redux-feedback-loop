@@ -16,6 +16,10 @@ class Understanding extends Component {
         })
     }
 
+    lastQuestion=()=>{
+        this.props.history.push('/');
+    }
+
     //when next button is clicked, do two things:
     //switch to next component, and dispatch input value to reducer 
     //history is a prop of the component given by Route
@@ -49,6 +53,7 @@ class Understanding extends Component {
                     <input type="radio" id="understanding-5" name="understanding" value="5" onChange={this.storeInput} />
                     <label htmlFor="understanding-5">5</label>
                 </form>
+                <button onClick={this.lastQuestion}>Back</button>
                 <button onClick={this.nextQuestion}>Next</button>
             </div>
         )
