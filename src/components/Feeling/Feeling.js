@@ -9,13 +9,8 @@ class Feeling extends Component{
         inputValue: this.props.reduxState.feelingsReducer,
     }
 
-    componentDidMount=()=>{
-        console.log('in componentDidMount. feelingsreducer is', this.props.reduxState.feelingsReducer, 'and this.state.inputValue is,', this.state.inputValue);
-    }
-
     //keep the local state up to date with what's entered in the input
-    storeInput=(event, selectedRadio)=>{
-        console.log('just clicked button', event.target.value);
+    storeInput=(event)=>{
         this.setState({
             inputValue: event.target.value,
         })
