@@ -51,13 +51,3 @@ VALUES (4, 4, 5, 'Doing Great!');
 
 ```
 
-## What it does:
-
-- `GET /tasks/:path` returns all tasks, in the order specified (or if none is specified, from first created to latest created)
-
-- `POST /tasks` takes user input from the DOM and sends a task object to the database.
-
-- `PUT /tasks/<id>` updates the task's completion status to 'true', which changes its class name to 'completed-true', which changes how it is displayed in the browser.
-
-- `DELETE /tasks/<id>` Deletes a specific task, identified with a data attribute connected to the delete button clicked.
-
