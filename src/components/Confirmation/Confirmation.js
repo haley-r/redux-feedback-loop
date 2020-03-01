@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Card from '@material-ui/core/Card';
+import Button from '@material-ui/core/Button';
 
 class Confirmation extends Component {
     //when Leave New Feedback button is clicked:
@@ -27,10 +29,11 @@ class Confirmation extends Component {
 
     render() {
         return (
-            <div className="Confirmation">
-                <h2>Your Feedback Has Been Submitted. Thank You!</h2>
-                <button onClick={this.resetToStart}>Leave New Feedback</button>
-            </div>
+            <Card className="Confirmation">
+                <h2>Your Feedback Has Been Submitted.</h2>
+                <h2>Thank You!</h2>
+                <Button onClick={this.resetToStart} className="newFeedbackButton">Leave New Feedback</Button>
+            </Card>
         )
     }
 }

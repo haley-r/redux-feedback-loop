@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import axios from 'axios';
+import Card from '@material-ui/core/Card';
+import Button from '@material-ui/core/Button';
 
 class Review extends Component {
     //local state holds the feedback object based on previous inputs
@@ -56,15 +58,17 @@ class Review extends Component {
 
     render() {
         return (
-            <div className="Review">
+            <Card className="Review">
                 <h2>Review Your Feedback</h2>
-                <p>Feelings: {this.state.feeling}</p>
-                <p>Understanding: {this.state.understanding}</p>
-                <p>Support: {this.state.support}</p>
-                <p>Comments: {this.state.comments}</p>
-                <button onClick={this.lastQuestion}>Back</button>
-                <button onClick={this.submitFeedback}>Submit</button>
-            </div>
+                <div className="reviewStuff">
+                    <p className="p-label"><span>Feelings:</span> {this.state.feeling}</p>
+                    <p className="p-label"><span>Understanding:</span> {this.state.understanding}</p>
+                    <p className="p-label"><span>Support:</span> {this.state.support}</p>
+                    <p><span>Comments:</span></p><p>{this.state.comments}</p>
+                </div>
+                <Button onClick={this.lastQuestion} className="backButton">Back</Button> 
+                <Button onClick={this.submitFeedback} className="nextButton">Submit</Button>
+            </Card>
         )
     }
 }

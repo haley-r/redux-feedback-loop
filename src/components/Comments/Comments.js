@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Card from '@material-ui/core/Card';
+import Button from '@material-ui/core/Button';
 
 class Comments extends Component {
     //local state holds the input value as selected by user
@@ -38,15 +40,15 @@ class Comments extends Component {
 
     render() {
         return (
-            <div className="Comments">
+            <Card className="Comments">
                 <h2>Any comments you want to leave?</h2>
                 <form>
                     <label htmlFor="comments-input">Type your comment here:</label>
                     <input type="text" value={this.state.inputValue} id="comments-input" onChange={this.storeInput} />
                 </form>
-                <button onClick={this.lastQuestion}>Back</button>
-                <button onClick={this.nextQuestion}>Next</button>
-            </div>
+                <Button onClick={this.nextQuestion} className="nextButton">Next</Button>
+                <Button onClick={this.lastQuestion} className="backButton">Back</Button>
+            </Card>
         )
     }
 }

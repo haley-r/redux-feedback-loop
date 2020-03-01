@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import Card from '@material-ui/core/Card';
+import Button from '@material-ui/core/Button';
 
 class Feeling extends Component{
     //local state holds the input value as selected by user
@@ -34,7 +36,7 @@ class Feeling extends Component{
 
     render(){
         return(
-            <div className="Feeling">
+            <Card className="Feeling">
                 <h2>How are you feeling today?</h2>
                     <form>
                     <input type="radio" id="feelings-1" name="feelings" value="1" checked={this.state.inputValue==='1'} onChange={this.storeInput}/>
@@ -48,8 +50,8 @@ class Feeling extends Component{
                     <input type="radio" id="feelings-5" name="feelings" value="5" checked={this.state.inputValue === '5'} onChange={this.storeInput} />
                         <label htmlFor="feelings-5">5</label>
                     </form>
-                <button onClick={this.nextQuestion}>Next</button>
-            </div>
+                <Button onClick={this.nextQuestion} className="nextButton">Next</Button>
+            </Card>
         )
     }
 }

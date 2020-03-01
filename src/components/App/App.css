@@ -1,11 +1,14 @@
 .App {
   text-align: center;
+  background-color: rgb(0, 190, 181);
+  color: rgb(46, 54, 54);
+  height: 100vh;
 }
 
 .App-header {
-  background-color: #033076;
-  min-height: 70px;
-  padding: 20px;
+  background-color: rgb(46, 54, 54);
+  min-height: 40px;
+  padding: 5px;
   color: white;
 }
 
@@ -15,5 +18,87 @@
 
 .App-intro {
   font-size: large;
+}
+
+footer {
+  width: 100vw;
+  padding: 1em;
+  font-weight: bold;
+  position:fixed;
+  bottom: 0;
+}
+
+.MuiCard-root {
+  position: absolute;
+  width: 90vw;
+  min-height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.MuiCard-root .nextButton {
+  font-size: 1.25em;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 85%;
+  transform: translateX(-50%);
+}
+
+.MuiCard-root .backButton {
+  font-size: 1.25em;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 15%;
+  transform: translateX(-50%);
+}
+
+.MuiCard-root .newFeedbackButton {
+  font-size: 1.25em;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.MuiCard-root form {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 0);
+}
+
+input[type="radio"] {
+  margin-left: 2em;
+}
+
+input[type="text"] {
+  width: 70vw;
+}
+
+.Review {
+  min-height: 300px;
+}
+
+.reviewStuff {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 7em;
+}
+
+.Review p {
+  margin: none;
+  padding: none;
+  text-align: left;
+  left: 40%;
+  overflow: wrap;
+}
+
+.p-label {
+  margin-top: 1em;
+}
+
+.Review p span {
+  font-weight: bold;
 }
 
