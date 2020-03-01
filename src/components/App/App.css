@@ -116,10 +116,10 @@ input[type="text"] {
 table {
   border-collapse: collapse;
   position: absolute;
-  width: 100%;
+  width: 90%;
   height: 500px;
-  left: 0;
-  padding: 1em;
+  left: 5%;
+  padding: 3em;
 }
 
 tr:hover {
@@ -131,7 +131,9 @@ th {
   font-size: .6em;
 }
 
-
+tr .false {
+  color: red;
+}
 
 
 

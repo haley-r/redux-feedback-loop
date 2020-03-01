@@ -6,11 +6,25 @@ import Button from '@material-ui/core/Button';
 
 class Admin extends Component {
     state = {
-        submittedFeedback: []
+        submittedFeedback: [],
     }
 
     componentDidMount = () => {
         this.getFeedback();
+    }
+
+    deleteFeedback = (id) => {
+        console.log('in delete feedback');
+        axios({
+            method: 'DELETE',
+            url: `/feedback/${id}`
+        }).then((response) => {
+            console.log('back from delete feedback with', response);
+            this.getFeedback();
+        }).catch((error) => {
+            console.log(error);
+            alert('problem deleting feedback');
+        })
     }
 
     getFeedback=()=>{
@@ -41,7 +55,6 @@ class Admin extends Component {
                                 <th>Support</th>
                                 <th>Comments</th>
                                 <th>Delete </th>
-                                <th>Flag</th>
                             </tr>
                        </thead>
                        <tbody>
@@ -51,8 +64,7 @@ class Admin extends Component {
                                     <td>{feedbackObject.understanding}</td>
                                     <td>{feedbackObject.support}</td>
                                     <td>{feedbackObject.comments}</td>
-                                    <td><Button>Delete</Button></td>
-                                    <td><Button>Flag</Button></td>
+                                    <td><Button onClick={()=>this.deleteFeedback(feedbackObject.id)}>Delete</Button></td>
                                 </tr>)}
                        </tbody>
                    </table>
