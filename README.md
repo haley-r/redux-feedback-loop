@@ -18,9 +18,11 @@ This weekend challenge was a chance to practice full-stack react, react routers,
 - Node
 - Express
 - HTML/CSS
+- Material UI
 - SQL
 
 ## Dependencies
+- material-ui
 - axios
 - pg
 - react
